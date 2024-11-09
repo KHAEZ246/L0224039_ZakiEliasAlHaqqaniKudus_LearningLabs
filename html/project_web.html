@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steins;Gate Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #f4f4f9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #ffa500;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 2em;
+            margin: 2em auto;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none; /* Hide sections by default */
+        }
+
+        /* Visible section */
+        .visible {
+            display: block;
+        }
+
+        /* Header Styles */
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #666;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 0.3em;
+            margin-bottom: 1em;
+        }
+
+        /* Image Styles */
+        img {
+            display: block;
+            margin: 1em auto;
+            border-radius: 8px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input, textarea, button {
+            margin-bottom: 1em;
+        }
+        input, textarea {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ffa500;
+        }
+
+        /* Footer Link Styles */
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffa500;
+        }
+    </style>
+</head>
+<body onload="showSection('home')">
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Homepage</a></li>
+            <li><a href="#content" onclick="showSection('content')">Content Page</a></li>
+            <li><a href="#feedback" onclick="showSection('feedback')">Feedback Page</a></li>
+        </ul>
+    </nav>
+
+    <!-- Homepage Section -->
+    <section id="home" class="visible">
+        <h1>Welcome to Steins;Gate Anime Page</h1>
+            <img src ="steins;gate_char.png" width="300px" alt="Steins;gate">    
+            <p>Jelajahi dunia Steins;Gate dan ketahui lebih banyak tentang anime yang menganggumkan ini.</p>
+    </section>
+
+    <!-- Content Section -->
+    <section id="content">
+        <h1>Mengenal anime Steins;Gate</h1>
+        <img src="Steins;gate.png" width="200px" alt="Poster Steins;Gate">
+        <p>Steins;Gate adalah sebuah anime sci-fi dengan membawa tema mesin waktu. Cara Steins;Gate membungkus tema mesin waktu sangatlah baik dan menarik. Drama yang disajikan antar karakter pun juga sangat menyentuh dan kompleks. Beberapa orang mengatakan bahwa anime ini memiliki alur yang sulit untuk diikut, tapi jika Anda memerhatikan setiap episode dengan seksama, maka Anda bisa memahami letak keindahan dari anime ini.</p>
+        <p>Untuk informasi lebih lanjut, kunjungi <a href="https://steinsgate.fandom.com/wiki/Steins;Gate" target="_blank" title="Wiki Steins;Gate">wiki Steins;Gate</a>.</p>
+
+        <h2>Karakter Penting dan Pengisi Suara</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Karakter</th>
+                    <th>Pengisi Suara (Jepang)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Rintarou Okabe</td><td>Mamoru Miyano</td></tr>
+                <tr><td>Kurisu Makise</td><td>Asami Imai</td></tr>
+                <tr><td>Mayuri Shiina</td><td>Kana Hanazawa</td></tr>
+                <tr><td>Itaru "Daru" Hashida</td><td>Tomokazu Seki</td></tr>
+                <tr><td>Suzuha Amane</td><td>Yukari Tamura</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback">
+        <h1>Feedback Page</h1>
+        <p>We appreciate your feedback on our Steins;Gate page. Please fill out the form below.</p>
+        <form action="/submit_feedback" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('visible');
+            });
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('visible');
+        }
+    </script>
+</body>
+</html>
